@@ -3,11 +3,11 @@ import { PORT, mongodbURL } from '../backend/config.js';
 import mongoose from 'mongoose';
 import { Book } from './models/bookModel.js';
 import router from './routes/booksRoute.js';
-
+import cors from 'cors';
 const app = express();
 
 app.use(express.json());
-
+app.use(cors());
 app.get('/', (req, res) => {
   return res.status(233).send(` saluy`);
 });
